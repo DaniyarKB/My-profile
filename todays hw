@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Positions and Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .static {
+            position: static;
+            background-color: lightblue;
+            padding: 10px;
+        }
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: lightcoral;
+            padding: 10px;
+        }
+        .absolute {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: lightgreen;
+            padding: 10px;
+        }
+        .fixed {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="static">Static Position <a href="https://www.example.com">Visit Example</a></div>
+    <div class="relative">Relative Position <a href="https://www.google.com">Go to Google</a></div>
+    <div class="absolute">Absolute Position <a href="https://www.wikipedia.org">Wikipedia</a></div>
+    <div class="fixed">Fixed Position <a href="https://www.github.com">GitHub</a></div>
+</body>
+</html>
