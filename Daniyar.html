@@ -1,12 +1,54 @@
-‹ !Doctype html>
-‹html >
-‹body> <h1>He11o</h1>
-<img src-"asd.jpg"/
-<h2>Hello</h2>
-<h3>Hello</h3>
-<h4>He11o</h4>
-<h5>Hello</h5>
-<h6>He11o</h6>
-<h8>Hello</h8>
-‹p> Hello I am here and yes</p›
-</body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimal Search</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background-color: yellow;
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Search word..." oninput="highlightWord()" />
+  <p id="text">
+    The quick brown fox jumps over the lazy dog. The fox is swift and clever.
+  </p>
+
+  <script>
+    function highlightWord() {
+      const input = document.getElementById("searchInput").value.trim();
+      const textElement = document.getElementById("text");
+      const originalText = textElement.textContent;
+
+      if (input === "") {
+        textElement.innerHTML = originalText;
+        return;
+      }
+
+      const regex = new RegExp(`(${input})`, "gi");
+      const highlighted = originalText.replace(regex, `<span class="highlight">$1</span>`);
+      textElement.innerHTML = highlighted;
+    }
+  </script>
+</body>
+</html>
+
